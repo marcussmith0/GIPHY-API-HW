@@ -10,37 +10,6 @@ $(document).ready(function(){
 
       makeTheButtons();
 
-      $(".gifs").click(function() {
-
-          console.log("YOUCLICKEDTHEIMG!!!!!!!ODHAIUSDVIAFNVIQEN");
-
-          var state = $(this).attr("data-state");
-
-          if (state === "still") {
-
-            console.log("THISSHOULDSHOWIFYOUSUCCESSFULLYPLAYED");
-
-            $(this).attr("data-state", "animated");
-
-            $(this).attr("src", $(this).attr("data-animate"));
-            
-          }
-
-          else {
-
-            console.log("THISDHOULDWHOIFYOUSUCCESSFULLYPAUSEDIT");
-
-            $(this).attr("data-state", "still");
-
-            $(this).attr("src", $(this).attr("data-still"));
-
-
-            }
-
-
-
-      });
-
       $("#add-character").on("click", function(event) {
        
         event.preventDefault();
@@ -99,9 +68,9 @@ $(document).ready(function(){
 
             for(i = 0; i < yourStuff.length; i++) {
 
-              var rating = yourStuff[i].rating;
+              var rating = yourStuff[i].rating.toUpperCase();
 
-              var p = $("<p>").text("Rating: " + rating);
+              var p = $("<p>").text("Rating: " + rating).css("font-weight", "bold");
 
 
               var newImg = $("<img>");
@@ -113,13 +82,15 @@ $(document).ready(function(){
               newImg.attr("data-still", pauseImg);
               newImg.attr("data-animate", playImg);
               newImg.attr("data-state", stateOfGif);
-              newImg.addClass("gifs");
+              
 
  
               newImg
 
 
               var newImgDiv = $("<div>");
+
+              newImgDiv.addClass("pull-left");
 
 
               newImgDiv.append(p);
@@ -132,6 +103,84 @@ $(document).ready(function(){
           }); 
 
       });
+
+
+          $(".gifs").click(function() {
+
+          console.log("YOUCLICKEDTHEIMG!!!!!!!ODHAIUSDVIAFNVIQEN");
+
+          var state = $(this).attr("data-state");
+
+          if (state === "still") {
+
+            console.log("THISSHOULDSHOWIFYOUSUCCESSFULLYPLAYEDIT");
+
+            $(this).attr("data-state", "animated");
+
+            $(this).attr("src", $(this).attr("data-animate"));
+            
+          }
+
+          else {
+
+            console.log("THISDHOULDWHOIFYOUSUCCESSFULLYPAUSEDIT");
+
+            $(this).attr("data-state", "still");
+
+            $(this).attr("src", $(this).attr("data-still"));
+
+
+            }
+
+
+
+      });
+
+
+
+
+          $(document).on("click", "img", function() {
+
+          console.log("YOUCLICKEDTHEIMG!!!!!!!ODHAIUSDVIAFNVIQEN");
+
+          var state = $(this).attr("data-state");
+
+          if (state === "still") {
+
+            console.log("THISSHOULDSHOWIFYOUSUCCESSFULLYPLAYEDIT");
+
+            $(this).attr("data-state", "animated");
+
+            $(this).attr("src", $(this).attr("data-animate"));
+            
+          }
+
+          else {
+
+            console.log("THISDHOULDWHOIFYOUSUCCESSFULLYPAUSEDIT");
+
+            $(this).attr("data-state", "still");
+
+            $(this).attr("src", $(this).attr("data-still"));
+
+
+            }
+
+
+
+      });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       	}
