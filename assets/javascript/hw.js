@@ -28,6 +28,8 @@ $(document).ready(function(){
 
       function makeTheButtons () {
 
+        $("#character-input").val("");
+
       	$("#the-buttons-area").empty();
 
 
@@ -36,7 +38,8 @@ $(document).ready(function(){
       		var c = $("<button>");
 
 
-      		c.addClass("character");
+      		c.addClass("btn btn-primary character");
+
       		c.attr("data-person", listOfCharacters[i]);
       		c.text(listOfCharacters[i]);
       		console.log(listOfCharacters[i]);
@@ -78,16 +81,13 @@ $(document).ready(function(){
               var pauseImg = yourStuff[i].images.fixed_height_still.url;
               var playImg = yourStuff[i].images.fixed_height.url;
 
+              p.css("color", "white");
+
               newImg.attr("src", pauseImg);
               newImg.attr("data-still", pauseImg);
               newImg.attr("data-animate", playImg);
               newImg.attr("data-state", stateOfGif);
-              
-
- 
-              newImg
-
-
+         
               var newImgDiv = $("<div>");
 
               newImgDiv.addClass("pull-left");

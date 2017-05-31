@@ -15,18 +15,22 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 
-
-   
    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
    <script type="text/javascript" src="assets/javascript/hw.js"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"> 
+
 
 
 </head>
-<body background="assets/images/background.png">
+<body background="assets/images/background.png" style="background-repeat: no-repeat;
+												 		background-attachment: fixed;
+    													background-position: center;">
 
-	<h1 class="text-center"> View Your Favorite Cartoon Characters </h1>
+	<nav class="navbar navbar-inverse text-center">
+		<h1 class="navbarH1" style="font-family: 'Gloria Hallelujah', cursive; color: white;" >View Your Favorite Cartoon Characters</h1>
+	</nav>
 
 	<div class="container-fluid">
 
@@ -42,11 +46,11 @@
 
 
 				<form id="character-form">
-			      <label for="character-input">Add a Character!</label>
-			      <input type="text" id="character-input"><br>
+			      <label for="character-input"></label>
+			      <input type="text" id="character-input" placeholder="Character Name"><br>
 
-			      <!-- Button triggers new character to be added -->
-			      <input id="add-character" type="submit" value="Add a Character">
+			   
+			      <input style="margin-top: 5px" class="btn btn-success" id="add-character" type="submit" value="Add a Character">
 			    </form>
 
 
